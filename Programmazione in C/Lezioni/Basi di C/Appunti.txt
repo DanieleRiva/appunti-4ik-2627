@@ -1,0 +1,13 @@
+Tutorial installazione GCC su Windows:
+	https://code.visualstudio.com/docs/cpp/config-mingw
+	
+Tutorial C:
+	https://www.geeksforgeeks.org/c/c-programming-language/
+
+Compilare dopo aver installato GCC:
+	gcc [nomeDelFile.c] -o [nomeDell'eseguibile]
+
+Per esempio:
+	gcc prova.c -o prova
+
+	Compila il file prova.c e crea l'eseguibile prova.exe.
