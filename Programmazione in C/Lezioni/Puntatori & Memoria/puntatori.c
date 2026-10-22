@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void clear()
 {
@@ -187,7 +188,48 @@ void esempio7()
     }
 }
 
+int prova()
+{
+    return 5;
+}
+
+// Allocazione dinamica della memoria
+void esempio8()
+{
+    // Stack
+    int i = 10;
+
+    i = prova();
+
+    // Malloc lavora dentro memoria Heap
+    int *p = malloc(sizeof(int));
+    *p = 5;
+
+    printf("%p \n", p);
+    printf("%d \n", *p);
+
+    printf("%p \n", p + 1);
+    printf("%d \n", *(p + 1));
+
+    float *p2 = malloc(sizeof(float));
+
+    if (p2 == NULL)
+    {
+        printf("Errore nella malloc");
+        exit(EXIT_FAILURE);
+    }
+
+    *p2 = 5.5;
+    printf("%f \n", *p2);
+
+    // Memory Leak: la variabile non verrà mai più utilizzata e non
+    // viene rimossa dalla memoria
+
+    free(p2);
+    p2 = NULL;
+}
+
 void main()
 {
-    esempio7();
+    esempio8();
 }
